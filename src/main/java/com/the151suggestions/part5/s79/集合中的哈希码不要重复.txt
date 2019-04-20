@@ -1,0 +1,3 @@
+以Hash开头的集合查询快(HashMap HashSet...)
+HashMap 的get():查找原理:使用HashCode定位元素,若有哈希冲突,则遍历对比;若没有冲突,直接根据HashCode定位元素.
+HashMap中的hashCode应尽量避免冲突.

@@ -1,0 +1,10 @@
+1.  在执行速度方面的比较：StringBuilder >  StringBuffer > String
+2.  StringBuffer与StringBuilder，他们是可变字符串，用它们对字符串做操作时，实际上是在一个对象上操作的，不像String一样新创建一些对象进行操作，所以速度快。
+3.  StringBuilder：线程非安全的
+　  StringBuffer：线程安全的
+    当我们在字符串缓冲去被多个线程使用是，JVM不能保证StringBuilder的操作是安全的，虽然他的速度最快，但是可以保证StringBuffer是可以正确操作的。
+    当然大多数情况下就是我们是在单线程下进行的操作，所以大多数情况下是建议用StringBuilder而不用StringBuffer的，就是速度的原因。
+对于三者使用的总结：
+    1.字符串不经常改变,使用String,如变量的声明,少量的变量运算(拼接,替换,删除等)
+　　2.频繁的字符串运算(拼接,替换,删除等),并且运行在多线程中,使用StringBuffer,如XML解析,HTTP参数解析/封装等
+　　3.频繁的字符串运算(拼接,替换,删除等),并且运行在单线程中,使用StringBuilder,如SQL语句的拼装,JSON封装等

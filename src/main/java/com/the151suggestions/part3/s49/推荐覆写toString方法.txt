@@ -1,0 +1,12 @@
+system.out.println()的实现机制:
+原始对象,打印值; 对象类型,打印对象的toString方法返回值,类名+@+hashCode
+覆写toString方法,才能有友好的输出.
+==============================================================================================================================
+使用EqualsBuilder、HashCodeBuilder、CompareToBuilder、ToStringBuilder重写equals、hashCode、compareTo、toString方法
+
+为什么要使用ToStringBuilder？
+系统中一般都要打印日志的，因为所有实体的toString()方法 都用的是简单的"+"，因为每"＋" 一个就会 new 一个 String 对象，
+这样如果系统内存小的话会暴内存（前提系统实体比较多）。使用ToStringBuilder就可以避免暴内存这种问题的。
+
+使用ToStringBuilder时,类里有名为password这样的属性,一般情况下,是不想让toString输入的, 但用反射默认情况下是会输出的. 这怎么办呢?
+ReflectionToStringBuilder有一个扩展: 通过子类,覆盖其accept方法来加以筛选.

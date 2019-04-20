@@ -1,0 +1,4 @@
+大量的元素插入HashMap有可能会导致内存溢出,原因:
+1. HashMap底层是以数组保存元素,每一个键值对就是一个元素,也就是说,HashMap把键值对封装成Entry对象,再把Entry对象放入数组.
+   HashMap底层数组Node<K,V>[] table;是Entry类型数组(class Node<K,V> implements Map.Entry<K,V>),把键值对封装成Entry对象占用空间
+2. HashMap默认容量16,默认扩容因子0.75,put()时,先做长度校验,如果>=阈值(默认阈值:16*0.75=12),则扩容1倍.一次次的扩容会导致内存溢出.

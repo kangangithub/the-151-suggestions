@@ -1,0 +1,1 @@
+数组是定长的,Java中数组扩容是Arrays.copyOf(oldDatas, newLen)--该方法是浅拷贝,可用集合代替变长数组.

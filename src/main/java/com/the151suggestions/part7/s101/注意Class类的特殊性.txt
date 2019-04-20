@@ -1,0 +1,23 @@
+Java处理机制:
+.java文件编译成.class文件,再通过ClassLoader机制加载到内存,最后生成实例执行
+
+Class类(元类):描述加载到内存中的类数据,描述类的 类对象
+    1.无构造方法
+        Class对象是在加载类时由Java虚拟机调用ClassLoader中的defineClass()自动构造.
+    2.可以描述基本类型
+        基本类型在JVM中不是对象,一般存于栈内存中. int.class表示int的类对象
+    3.其对象都是单例模式
+        一个Class的实例对象只能描述一个类,反之亦然.
+        String.class.equals(new String().getClass())    true
+        "ABC".equals(String.class)  true
+        ArrayList.class.equals(new ArrayList<String>().getClass())) true,Class实例对象不区分泛型
+
+    获得Class对象的方法:
+        1.类属性方式,String.class
+        2.对象的getClass(),new String().getClass()
+        3.forName("全限定名")加载,Class.forName("java.lang.String")
+
+    获得Class对象后:
+        getAnnotation() 获得注解
+        getMethods()    获得方法
+        getConstructions()  获得构造方法

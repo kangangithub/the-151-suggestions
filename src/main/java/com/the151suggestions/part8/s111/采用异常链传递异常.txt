@@ -1,0 +1,31 @@
+责任链模式:将多个对象连成一条链,并沿着这条链传递请求,直到被处理为止
+异常的传递也应该采用责任链模式,假如在持久层发生异常,需要在页面展示,具体做法是:
+    1.把异常封装
+    2.抛出异常至业务层,根据具体异常进行处理,然后抛出至控制层
+    3.页面获取控制层异常,如果是管理员,展示低层级异常(NoSuchMethodException等),如果是普通用户,展示高层级异常(网络异常等)
+
+IOException源码:
+public class IOException extends Exception {
+
+    public IOException() {
+        super();
+    }
+    //定义异常原因
+    public IOException(String message) {
+        super(message);
+    }
+    //定义异常原因并携带原始异常
+    public IOException(String message, Throwable cause) {
+        super(message, cause);
+    }
+    //保留原始异常信息
+    public IOException(Throwable cause) {
+        super(cause);
+    }
+}
+上一个层级的异常可以通过异常链传递:
+try{
+    do something
+}catch(Exception e){
+    throw new IOException(e);
+}

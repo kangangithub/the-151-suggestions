@@ -1,0 +1,18 @@
+@Override
+    public boolean equals(Object obj) {
+        if (this == obj) {//判断obj和this是否是同一对象
+            return true;
+        }
+        if (obj == null) {//判断obj是否为null
+            return false;
+        }
+        if (this.getClass() != obj.getClass()) {//判断两对象实际类型是否相同
+            return false;
+        }
+        Person person = (Person) obj;
+        if (this.name.equals(person.name) && this.age == person.age) {//判断属性是否相同(根据具体业务判断哪些属性需要比较),对象类型用equals(),基本类型用==
+            return true;
+        } else {
+            return false;
+        }
+    }

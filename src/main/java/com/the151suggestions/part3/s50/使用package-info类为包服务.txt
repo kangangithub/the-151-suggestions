@@ -1,0 +1,17 @@
+package-info类很特殊,主要体现在3个方面:
+1.不能被随便创建
+    IDE中(Ecplise,IDEA),package-info不能创建,因为类名无效.可在记事本/NotePad++中创建,在拷贝到IDE中.
+    Java类名:字母,数字,下划线,$
+2.服务的对象很特殊
+    package-info是描述和记录本包信息的
+3.不能有实现代码
+    该类会编译成package-info.class,不可继承,没有接口,没有类间关系(关联,组合,聚合等).
+
+package-info类的作用:
+1.声明友好类及包内访问常量
+2.为在包上标注注解提供便利
+    比如Struts2中的@namespace
+3.提供包的整体注释说明
+    做包的说明文档,记录版本变迁历史
+
+在用到包的地方,可以考虑package-info这个特殊类.

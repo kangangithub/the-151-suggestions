@@ -1,0 +1,9 @@
+Java异常机制:
+    Error类及其子类:错误
+        不需程序员处理也不能处理的异常,比如VirtualMachineError虚拟机错误, ThreadDeath线程僵死等
+
+    RuntimeException类及其子类:非受检异常
+        系统可能抛出的异常,可处理可不处理,比如NullPointerException空指针异常, IndexOutOfBoundsException下标越界异常
+
+    Exception类及其子类(不包括非受检异常):受检异常
+        必须处理的异常,否则编译不通过,比如IOException I/O异常, SQLException数据库访问异常

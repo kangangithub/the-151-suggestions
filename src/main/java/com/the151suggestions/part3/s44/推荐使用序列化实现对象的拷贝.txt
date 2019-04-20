@@ -1,0 +1,1 @@
+采用序列化方式拷贝,使用commons-lang3工具包中的SerializationUtils类,要求被克隆对象实现Serializable接口.

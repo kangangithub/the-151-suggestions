@@ -1,0 +1,4 @@
+在"+"表达式中,字符串具有最高优先级
+String s = "abc" + 1 + 2;   //abc12
+String s = "abc" + (1 + 2); //abc3
+String s = 1 + 2 + "abc";   //3abc

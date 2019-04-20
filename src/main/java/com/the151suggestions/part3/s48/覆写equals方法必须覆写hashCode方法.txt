@@ -1,0 +1,15 @@
+不覆写hashCode(),即使相同对象的hashCode(哈希码)也不相同.
+org.apache.commons.lang.builder
+　　CompareToBuilder – 用于辅助实现Comparable.compareTo(Object)方法；
+　　
+　　EqualsBuilder – 用于辅助实现Object.equals()方法；
+　　
+　　HashCodeBuilder – 用于辅助实现Object.hashCode()方法；
+　　
+　　ToStringBuilder – 用于辅助实现Object.toString()方法；
+　　
+　　ReflectionToStringBuilder – 使用反射机制辅助实现Object.toString()方法；
+　　
+　　ToStringStyle – 辅助ToStringBuilder控制输出格式；
+　　
+　　StandardToStringStyle – 辅助ToStringBuilder控制标准格式。

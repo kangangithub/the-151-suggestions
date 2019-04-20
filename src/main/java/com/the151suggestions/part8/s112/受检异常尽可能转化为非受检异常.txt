@@ -1,0 +1,26 @@
+1.受检异常使接口不稳定
+interface User{
+    void changePassword() throws MyException;
+}
+如果User的某个实现类会抛出不属于MyException的IOException,则接口需要改动
+
+2.受检异常使可读性降低
+try {
+    doStuff();
+} catch (NoSuchMethodException e) {
+    log.error("An error occurred when invoking test2, the error message is {}", e);
+    throw new MyBussinessException("找不到这个方法");
+}
+受检异常经过try{}catch(){}处理,变得复杂,而且还可能在catch(){}中再次抛出异常
+
+3.受检异常增加开发工作量
+受检异常需要封装,需要传递,增加开发工作量
+
+当受检异常威胁到系统的安全性,稳定性,可靠性,正确性时,必须处理,不能转化成非受检异常.
+
+受检异常转化成非受检异常:
+例如:接口方法不抛异常
+interface User{
+    void changePassword();
+}
+在具体实现类中根据情况抛出RuntimeException;

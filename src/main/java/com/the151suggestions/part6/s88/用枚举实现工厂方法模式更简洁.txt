@@ -1,0 +1,13 @@
+用枚举实现工厂方法模式优点:
+    1.避免错误调用的发生
+        一般工厂方法模式中的生产方法(create())可以接收3种类型参数:类型参数(Xxx.class),String(判断String参数需要生产什么对象),int参数(根据int值判断需要生产什么对象)
+        这3种参数都是宽泛数据类型,很容易产生错误(int的边界问题,String的null值问题)
+        Car car = CommonCarFactory.createCar(Car.class);
+    2.性能好,使用便捷
+        枚举类型的计算是以int类型的计算为基础的
+    3.降低类间耦合
+        迪米特原则:一个对象应该对其他对象有最少的了解,即类间关系尽量低耦合
+         Car car = CommonCarFactory.createCar(FordCar.class);
+
+          Car car = CarFactoryEnum.BUICKCAR.create();
+          Car car2 = CarFactoryEnum2.FORDCAR.create();

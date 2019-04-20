@@ -1,0 +1,33 @@
+Java集合:
+    1.List:有序,有下标,元素可重复
+        ArrayList:可变数组,线程不安全,操作速度快,可随机存取,查询/修改快,插入/删除慢,fori遍历快
+        LinkedList:双向链表,不可随机存取,插入/删除快,查询/修改慢,foreach遍历快,间接实现Queue接口
+        Vector:可变数组,线程安全,操作速度慢,可随机存取
+        Stack:继承Vector,对象栈,先进后出
+    2.Set:无序,无下标,元素不可重复
+        HashSet:底层由HashMap实现
+        LinkedHashSet:保证元素插入顺序,HashSet子类, 基于LinkedHashMap来实现的,其他与HashSet一样。
+        TreeSet:实现SortedSet接口,插入元素时自动排序,修改元素不保证排序
+        EnumSet:枚举类型专用set,所有元素都是枚举类型
+    3.Map:key_value存储,Entry
+        HashMap:线程不安全,操作速度快,允许null键 null值,重复key覆盖原有键值对。
+        HashTable:线程安全,操作速度慢,不允许null键 null值
+        Properties:HashTable子类,常用作配置文件
+        TreeMap:类似TreeSet,排序,基于红黑树实现
+        LinkedHashMap:保证元素插入顺序,HashMap子类
+        EnumMap:枚举专用Map, key是enum类型，而value则可以是任意类型。
+        WeakHashMap:使用弱引用作为 key，即当 key 对象没有任何引用时，key/value 将会被回收。
+    4.Queue:队列,先进先出
+        阻塞式队列:
+            ArrayBlockingQueue:数组式有界阻塞队列
+            PriorityBlockingQueue:有优先级的阻塞队列
+            LinkedBlockingQueue:链表式阻塞队列
+        非阻塞式队列:
+            PriorityQueue:保证最高或者最低优先级的的元素总是在队列头部,无边界,只要内部允许,就可以持续追加元素
+    5.数组
+        所有集合底层存储都是数组实现,与集合最大区别是数组能容纳基本类型,集合不可以
+    6.工具类
+        数组常用工具类:java.util.Arrays和java.lang.reflect.Array
+        集合常用工具类:java.util.Collections
+    7.扩展类
+        Apache的comms-collection扩展包  Google的google-collections扩展包

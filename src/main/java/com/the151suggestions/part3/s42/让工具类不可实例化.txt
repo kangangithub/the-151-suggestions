@@ -1,0 +1,12 @@
+让工具类不可实例化
+1. final修饰类,杜绝其可继承性
+2. private修饰构造方法,除了类本身不可产生实例.
+例:Math类源码(部分):
+public final class Math {
+
+    /**
+     * Don't let anyone instantiate this class.
+     */
+    private Math() {}
+    ...
+}
